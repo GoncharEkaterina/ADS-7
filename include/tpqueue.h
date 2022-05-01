@@ -4,7 +4,14 @@
 
 template<typename T>
 class TPQueue {
-  // реализация шаблона очереди с приоритетом на связанном списке
+ private:
+  int head, tail;
+  struct ITEM {
+    T data;
+    ITEM * next;
+  };
+ public:
+  
 };
 
 struct SYM {
