@@ -7,20 +7,19 @@
 template<typename T>
 class TPQueue {
  private:
-  int *head;
-  int *tail;
   struct ITEM {
     T data;
     ITEM * next;
     ITEM * prev;
- };
-  TPQueue::ITEM*create(const T &data) {
+  };
+  int *head;
+  int *tail;
+  TPQueue::ITEM *create(const T &data) {
   ITEM *item = new ITEM;
   item->data = data;
   item->next = nullptr;
   return item;
 }
- 
  public:
   T pop() {
     if (head) {
@@ -30,7 +29,7 @@ class TPQueue {
       head = temp;
       return data;
     } else { throw std::string("Empty"); }
- }
+  }
   void push(const T &data) {
     ITEM *temp = head;
     ITEM *item = create(data);
@@ -40,7 +39,7 @@ class TPQueue {
       tail->next = item;
       tail->next->prev = tail;
       tail = item;
-    } else if (!temp && !head) { 
+    } else if (!temp && !head) {
       head = item = tail;
     } else if (!temp->prev) {
       temp->prev = item;
@@ -52,7 +51,7 @@ class TPQueue {
       item->prev = item;
     }
   }
-};
+}
 
 struct SYM {
   char ch;
