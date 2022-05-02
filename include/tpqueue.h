@@ -51,6 +51,7 @@ class TPQueue {
       item->prev = item;
     }
   }
+ }
 }
 
 struct SYM {
