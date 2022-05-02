@@ -15,10 +15,10 @@ class TPQueue {
   int *head;
   int *tail;
   TPQueue::ITEM *create(const T &data) {
-  ITEM *item = new ITEM;
-  item->data = data;
-  item->next = nullptr;
-  return item;
+    ITEM *item = new ITEM;
+    item->data = data;
+    item->next = nullptr;
+    return item;
 }
  public:
   T pop() {
