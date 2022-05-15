@@ -12,14 +12,14 @@ class TPQueue {
     ITEM *next;
     ITEM *prev;
   };
-  ITEM *head;
-  ITEM *tail;
-  TPQueue::ITEM *create(const T &data) {
+ TPQueue::ITEM *create(const T &data) {
     ITEM *item = new ITEM;
     item->data = data;
     item->next = nullptr;
     return item;
-}
+ }
+  ITEM *head;
+  ITEM *tail;
 
  public:
   T pop() {
@@ -34,7 +34,7 @@ class TPQueue {
   void push(const T &data) {
     ITEM *temp = head;
     ITEM *item = create(data);
-    while (temp && temp->prior.data >= data.prior)
+    while (temp && temp->data.prior >= data.prior)
       tail = tail->next;
     if (!temp && head) {
       tail->next = item;
