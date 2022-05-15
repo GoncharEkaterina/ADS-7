@@ -12,17 +12,12 @@ class TPQueue {
     ITEM *next;
     ITEM *prev;
   };
-  TPQueue::ITEM *create(const T &data) {
-    ITEM *item = new ITEM;
-    item->data = data;
-    item->next = nullptr;
-    item->prev = nullptr;
-    return item;
-}
+  TPQueue::ITEM *create(const T&);
   ITEM *head;
   ITEM *tail;
 
  public:
+  TPQueue(): head(nullptr), tail(nullptr) {}
   T pop() {
     if (head) {
       ITEM *temp = head->next;
@@ -64,5 +59,14 @@ struct SYM {
   char ch;
   int prior;
 };
+
+template <typename T>
+typename TPQueue<T>::ITEM *TPQueue<T>::create(const T& data) {
+  ITEM * item = new ITEM;
+  item->data = data;
+  item->next = nullptr;
+  item->prev = nullptr;
+  return item;
+}
 
 #endif  // INCLUDE_TPQUEUE_H_
