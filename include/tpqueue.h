@@ -20,7 +20,7 @@ class TPQueue {
     item->next = nullptr;
     return item;
 }
- 
+
  public:
   T pop() {
     if (head) {
