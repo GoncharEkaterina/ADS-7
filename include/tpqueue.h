@@ -34,7 +34,7 @@ class TPQueue {
   void push(const T &data) {
     ITEM *temp = head;
     ITEM *item = create(data);
-    while (temp && temp->prior.data >= data.prior) {
+    while (temp && temp->prior.data >= data.prior)
       tail = tail->next;
     if (!temp && head) {
       tail->next = item;
@@ -52,7 +52,6 @@ class TPQueue {
       item->prev = item;
     }
   }
-}
 };
 
 struct SYM {
