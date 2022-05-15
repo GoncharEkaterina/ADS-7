@@ -15,20 +15,27 @@ class TPQueue {
   TPQueue::ITEM *create(const T &data) {
     ITEM *item = new ITEM;
     item->data = data;
+    item->next = nullptr;
+    item->prev = nullptr;
     return item;
 }
   ITEM *head;
   ITEM *tail;
 
  public:
+  TPQueue(): head(nullptr), tail(nullptr) {}
   T pop() {
     if (head) {
       ITEM *temp = head->next;
+      if (temp)
+        temp->prev = nullptr;
       T data = head->data;
       delete head;
       head = temp;
+      if (!head)
+        tail = nullptr;
       return data;
-    } else { throw std::string("Empty"); }
+    } else { throw std::string("Is Empty!"); }
   }
   void push(const T &data) {
     ITEM *temp = head;
