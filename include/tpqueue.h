@@ -35,7 +35,7 @@ class TPQueue {
     ITEM *temp = head;
     ITEM *item = create(data);
     while (temp && temp->data.prior >= data.prior)
-      tail = tail->next;
+      temp = temp->next;
     if (!temp && head) {
       tail->next = item;
       tail->next->prev = tail;
