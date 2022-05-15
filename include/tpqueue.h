@@ -1,7 +1,7 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
-#include <iostream>
+
 #include <string>
 
 template<typename T>
@@ -19,7 +19,7 @@ class TPQueue {
  public:
   TPQueue(): head(nullptr), tail(nullptr) {}
   T pop() {
-    if (head) {
+    if (head && tail) {
       ITEM *temp = head->next;
       if (temp)
         temp->prev = nullptr;
