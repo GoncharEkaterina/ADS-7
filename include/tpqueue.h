@@ -51,6 +51,7 @@ class TPQueue {
       head = item;
     } else {
       temp->prev->next = item;
+      item->prev = temp->prev;
       item->next = temp;
       item->prev = item;
     }
