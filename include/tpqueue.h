@@ -23,7 +23,6 @@ class TPQueue {
   ITEM *tail;
 
  public:
-  TPQueue(): head(nullptr), tail(nullptr) {}
   T pop() {
     if (head) {
       ITEM *temp = head->next;
