@@ -9,11 +9,11 @@ class TPQueue {
  private:
   struct ITEM {
     T data;
-    ITEM * next;
-    ITEM * prev;
+    ITEM *next;
+    ITEM *prev;
   };
-  int *head;
-  int *tail;
+  ITEM *head;
+  ITEM *tail;
   TPQueue::ITEM *create(const T &data) {
     ITEM *item = new ITEM;
     item->data = data;
@@ -53,7 +53,7 @@ class TPQueue {
     }
   }
 }
-}
+};
 
 struct SYM {
   char ch;
