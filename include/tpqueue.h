@@ -20,6 +20,7 @@ class TPQueue {
     item->next = nullptr;
     return item;
 }
+ 
  public:
   T pop() {
     if (head) {
@@ -51,7 +52,7 @@ class TPQueue {
       item->prev = item;
     }
   }
- }
+}
 }
 
 struct SYM {
